@@ -168,10 +168,10 @@
                         <li class="submenu-item"><a class="submenu-link" onclick="loadFileUsuarios('usuarios','loadPage')">Usuarios</a></li>
                         <li class="submenu-item"><a class="submenu-link" onclick="loadFileUsuarios('roles','loadPage')">Roles</a></li>-->
                         <!-- <li class="submenu-item"><a class="submenu-link" onclick="loadFileUsuarios('personal','loadPage')">Personal</a></li> -->
-                        <li class="submenu-item"><a class="submenu-link" href="usuarios/AgregarUsuario.php">Agregar usuario</a></li>
+                        <!-- <li class="submenu-item"><a class="submenu-link" href="usuarios/AgregarUsuario.php">Agregar usuario</a></li> -->
                         <li class="submenu-item"><a class="submenu-link" href="usuarios/usuarios.php">Usuarios</a></li>
                         <li class="submenu-item"><a class="submenu-link" href="usuarios/roles.php">Roles</a></li>
-                        <li class="submenu-item"><a class="submenu-link" href="usuarioso/personal.php">Personal</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="usuarios/personal.php">Personal</a></li>
                     </ul>
                 </div>
             </li>

@@ -14,14 +14,14 @@
                 <div class="app-utilities col-auto">
                     <div class="app-utility-item app-user-dropdown dropdown">
                         <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                            role="button" aria-expanded="false"><img src="../assets/images/user.png"
+                            role="button" aria-expanded="false"><img src="../../assets/images/user.png"
                                 alt="user profile"></a>
                         <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                            <li><a class="dropdown-item">Perfil</a></li>
+                            <li><a class="dropdown-item" href="../Usuarios/perfil.php">Perfil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a  href="../Controlador/logout.php"  class="dropdown-item" href="">Salir</a></li>
+                            <li><a  href="../../Controlador/logout.php"  class="dropdown-item">Salir</a></li>
                         </ul>
                     </div>
                 </div>

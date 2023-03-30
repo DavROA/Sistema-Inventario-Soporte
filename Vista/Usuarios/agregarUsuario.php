@@ -59,7 +59,7 @@
                                                             <div class="col-12 col-md-10">
                                                                 <div class="app-card app-card-settings shadow-sm p-4">
                                                                     <div class="app-card-body">
-                                                                        <form class="settings-form">
+                                                                        <form id="" class="settings-form">
                                                                             <div class="row justify-content-between">
                                                                                 <div class="col-12 mb-3">
                                                                                     <label for="setting-input-2" class="form-label">Rol</label>  
@@ -75,14 +75,14 @@
                                                                                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre">      
                                                                                 </div>
                                                                                 <div class="col-6 mb-3">
-                                                                                    <label for="formGroupExampleInput2" class="form-label">Apellido paterno</label>        
-                                                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido Paterno">     
+                                                                                    <label for="formGroupExampleInput6" class="form-label">Apellido paterno</label>        
+                                                                                    <input type="text" class="form-control" id="formGroupExampleInput6" placeholder="Apellido Paterno">     
                                                                                 </div>
                                                                             </div>
                                                                             <div class="row justify-content-between">
                                                                                 <div class="col-6 mb-3">
-                                                                                    <label for="formGroupExampleInput2" class="form-label">Apellido Materno</label>
-                                                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido materno">
+                                                                                    <label for="formGroupExampleInput7" class="form-label">Apellido Materno</label>
+                                                                                    <input type="text" class="form-control" id="formGroupExampleInput7" placeholder="Apellido materno">
                                                                                 </div>
                                                                                 <div class="col-6 mb-3">
                                                                                     <label for="setting-input-2" class="form-label">Estado</label>  
@@ -146,32 +146,31 @@
                                                             <div class="col-12 col-md-10">
                                                                 <div class="app-card app-card-settings shadow-sm p-4">
                                                                     <div class="app-card-body">
-                                                                        <form class="settings-form">
+                                                                        <form id="addUser" class="settings-form">
                                                                             <div class="row justify-content-between">
                                                                                 <div class="col-6 mb-3">
                                                                                     <label for="formGroupExampleInput" class="form-label">Nombre</label>
-                                                                                    <input type="text" class="form-control"id="formGroupExampleInput" placeholder="Nombre">
+                                                                                    <input type="text" class="form-control"id="addnombre_ad" placeholder="Nombre">
                                                                                 </div>
                                                                                 <div class="col-6 mb-3">
-                                                                                    <label for="formGroupExampleInput2" class="form-label">Apellido paterno</label>
-                                                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido Paterno">
+                                                                                    <label for="formGroupExampleInput3" class="form-label">Apellido paterno</label>
+                                                                                    <input type="text" class="form-control" id="addapellidoP_ad" placeholder="Apellido Paterno">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="row justify-content-between">
                                                                                 <div class="col-6 mb-3">
-                                                                                    <label for="formGroupExampleInput2" class="form-label">Apellido Materno</label> 
-                                                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido materno">                                                                          
+                                                                                    <label for="formGroupExampleInput4" class="form-label">Apellido Materno</label> 
+                                                                                    <input type="text" class="form-control" id="addapellidoM_ad" placeholder="Apellido materno">                                                                          
                                                                                 </div>
                                                                                 <div class="col-6 mb-3">
-                                                                                    <label for="setting-input-2" class="form-label">Estado</label>     
-                                                                                    <select class="form-select" aria-label="Default select example">
-                                                                                        <option selected>Activo</option>
-                                                                                        <option value="1">Inactivo</option>
-                                                                                    </select>
+                                                                                    <label for="formGroupExampleInput2" class="form-label">N. Trabajador</label> 
+                                                                                    <input type="text" class="form-control" id="addnTrabajador_ad" placeholder="N. Trabajador">                                                                          
                                                                                 </div>
                                                                             </div>
-                                                                            <button type="submit" class="btn app-btn-primary">Save
-                                                                                Changes</button>
+                                                                            <div class="row justify-content-between">
+                                                                               
+                                                                            </div>
+                                                                            <button type="submit" class="btn app-btn-primary"> Registrar</button>
                                                                         </form>
                                                                     </div>
                                                                 </div>
@@ -193,10 +192,11 @@
     </div>				
 
     <!-- Javascript -->
- 
+    <script src="../../assets/plugins/popper.min.js"></script>
     <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../assets/plugins/chart.js/chart.min.js"></script>
-    <script src="../../assets/js/app.js"></script>		
+    <script src="../../assets/js/app.js"></script>
+    <script src="../../js/agregar.js"></script>				
 </body>
 
 </html>
