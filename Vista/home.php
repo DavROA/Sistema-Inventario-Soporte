@@ -48,7 +48,7 @@
 						    </div>
 							<hr class="dark horizontal my-0">
 							<div class="card-footer p-3">
-								<p class="mb-0"><span class="text-success text-sm font-weight-bolder" onclick="loadFileInventarioArt('articulos','loadPage')">Ver más detalles</span></p>
+								<p class="mb-0"><span class="text text-sm font-weight-bolder" onclick="loadFileInventarioArt('articulos','loadPage')">Ver más detalles</span></p>
 							</div>
 					    </div>
 				    </div>
@@ -65,7 +65,7 @@
 							</div>
 							<hr class="dark horizontal my-0">
 							<div class="card-footer p-3">
-								<p class="mb-0"><span class="text-success text-sm font-weight-bolder" onclick="loadFileInventario('equipoCompu','loadPage')">Ver más detalles</span></p>
+								<p class="mb-0"><span class="text text-sm font-weight-bolder" onclick="loadFileInventario('equipoCompu','loadPage')">Ver más detalles</span></p>
 							</div>
 						</div>
 				    </div>
@@ -82,7 +82,7 @@
 							</div>
 							<hr class="dark horizontal my-0">
 							<div class="card-footer p-3">
-								<p class="mb-0"><span class="text-success text-sm font-weight-bolder" onclick="loadFileInventario('prestamos','loadPage')">Ver más detalles</span></p>
+								<p class="mb-0"><span class="text text-sm font-weight-bolder" onclick="loadFileInventario('prestamos','loadPage')">Ver más detalles</span></p>
 							</div>
 						</div>
 				    </div>
@@ -100,7 +100,7 @@
 							</div>
 							<hr class="dark horizontal my-0">
 							<div class="card-footer p-3">
-								<p class="mb-0"><span class="text-success text-sm font-weight-bolder" onclick="loadFileSoporteMantenimiento('solicitarMante','loadPage')">Ver más detalles</span></p>
+								<p class="mb-0"><span class="text text-sm font-weight-bolder" onclick="loadFileSoporteMantenimiento('solicitarMante','loadPage')">Ver más detalles</span></p>
 							</div>
 						</div>
 				    </div>
@@ -447,7 +447,7 @@
     </div><!--//app-wrapper-->    					
 
     <!-- Javascript -->
-    <!--<script src="../assets/plugins/popper.min.js"></script>-->
+    <script src="../assets/plugins/popper.min.js"></script>
     <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Charts JS -->
     <script src="../assets/plugins/chart.js/chart.min.js"></script>
