@@ -4,7 +4,7 @@ include("Conexion.php");
     
 function obtener_todos_registros(){
     include("Conexion.php");
-    $stmt = $conexion->prepare("SELECT *FROM vista_articulos2"); 
+    $stmt = $conexion->prepare("SELECT *FROM vista_proveedores"); 
     $stmt->execute();
     $resultado = $stmt->fetchAll();
     return $stmt->rowCount();
@@ -12,30 +12,28 @@ function obtener_todos_registros(){
 
     $query = '';
     $salida = array();   
-    $query = "SELECT * from vista_articulos2 ";
-    $columns = array('folio','nombre','modelo','marca','descripcion','poliza','proveedor','categoria','estado');
- 
+    $query = "SELECT * from vista_proveedores";
+    $columns = array('empresa_prov','direccion_prov','telefono_prov','correo_prov','estado_prov');
+ /*
     if(isset($_POST["search"]["value"])){
-        $query .= 'where folio LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR nombre LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR modelo LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR marca LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR poliza LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR categoria LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'where empresa_prov LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR direccion_prov LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR telefono_prov LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR correo_prov LIKE "%' . $_POST["search"]["value"] .'%" ';
         
     } 
 
     if(isset($_POST["order"])) {
         $query .= 'ORDER BY '.$columns[$_POST['order']['0']['column']] .' '.$_POST['order']['0']['dir'] .' ';
     }else{
-        $query .= 'ORDER BY id DESC ';
+        $query .= 'ORDER BY id_prov DESC ';
     }
     
     if($_POST["length"] != -1){
         $query .= 'LIMIT ' .$_POST["start"]. ', ' .$_POST["length"];
 
     }
-
+*/
     $stmt = $conexion->prepare($query);
     $stmt->execute();
     $resultado = $stmt->fetchAll();
@@ -44,19 +42,15 @@ function obtener_todos_registros(){
     foreach($resultado as $fila){
         
         $sub_array = array();
-        $sub_array[] = $fila["folio"];
-        $sub_array[] = $fila["nombre"];
-        $sub_array[] = $fila["modelo"];
-        $sub_array[] = $fila["marca"];
-        $sub_array[] = $fila["descripcion"];
-        $sub_array[] = $fila["poliza"];
-        $sub_array[] = $fila["proveedor"];
-        $sub_array[] = $fila["categoria"];
-        if(($fila["estado"]!=0)){
+        $sub_array[] = $fila["empresa_prov"];
+        $sub_array[] = $fila["direccion_prov"];
+        $sub_array[] = $fila["telefono_prov"];
+        $sub_array[] = $fila["correo_prov"];
+        if(($fila["estado_prov"]!=0)){
         $sub_array[] =
                          '<div class="container px-4 text-center">
                                  <div class="col-4">
-                                     <span class="badge bg-success" id="' . $fila["estado"] . '">Activo</span>
+                                     <span class="badge bg-success" id="' . $fila["estado_prov"] . '">Activo</span>
                                     
                                  </div>
                              </div>
@@ -66,10 +60,10 @@ function obtener_todos_registros(){
                             <div class="container px-1 text-center">
                                 <div class="row g-4">
                                      <div class="col-6">
-                                        <button type="submit" name="btnBorrar" id="'.$fila["id"].'" class="btn btn-danger btnBorrar"><i class="bi bi-trash"></i></button>
+                                        <button type="submit" name="btnBorrar" id="'.$fila["id_prov"].'" class="btn btn-danger btnBorrar"><i class="bi bi-trash"></i></button>
                                       </div>
                                       <div class="col-6">
-                                            <button type="submit" name="btnEditar" class="btn btn-warning btnEditar" id="'.$fila["id"].'"><i class="bi bi-pencil-square"></i></button>
+                                            <button type="submit" name="btnEditar" class="btn btn-warning btnEditar" id="'.$fila["id_prov"].'"><i class="bi bi-pencil-square"></i></button>
                                     </div>
                                 </div>
                             </div/>

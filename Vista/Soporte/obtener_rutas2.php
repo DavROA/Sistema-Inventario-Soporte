@@ -1,10 +1,11 @@
 <?php
 
-include("Conexion.php");
-    
+include("../Inventario/Conexion.php");
+//include("../Sistema-Inventario-Soporte/Vista/Inventario/Conexion.php");    
 function obtener_todos_registros(){
-    include("Conexion.php");
-    $stmt = $conexion->prepare("SELECT *FROM vista_articulos2"); 
+   include("../Inventario/Conexion.php");
+    //include("../Sistema-Inventario-Soporte/Vista/Inventario/Conexion.php");
+    $stmt = $conexion->prepare("SELECT *FROM vista_rutas"); 
     $stmt->execute();
     $resultado = $stmt->fetchAll();
     return $stmt->rowCount();
@@ -12,17 +13,16 @@ function obtener_todos_registros(){
 
     $query = '';
     $salida = array();   
-    $query = "SELECT * from vista_articulos2 ";
-    $columns = array('folio','nombre','modelo','marca','descripcion','poliza','proveedor','categoria','estado');
+    $query = "SELECT * from vista_rutas ";
+    $columns = array('nodo','parcheo','puerto','segmento','num_segmento','vlan');
  
     if(isset($_POST["search"]["value"])){
-        $query .= 'where folio LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR nombre LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR modelo LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR marca LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR poliza LIKE "%' . $_POST["search"]["value"] .'%" ';
-        $query .= 'OR categoria LIKE "%' . $_POST["search"]["value"] .'%" ';
-        
+        $query .= 'where nodo LIKE "%' . $_POST["search"]["value"] .'%" '; 
+        $query .= 'OR parcheo LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR puerto LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR segmento LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR num_segmento LIKE "%' . $_POST["search"]["value"] .'%" ';
+        $query .= 'OR vlan LIKE "%' . $_POST["search"]["value"] .'%" ';      
     } 
 
     if(isset($_POST["order"])) {
@@ -44,24 +44,25 @@ function obtener_todos_registros(){
     foreach($resultado as $fila){
         
         $sub_array = array();
-        $sub_array[] = $fila["folio"];
-        $sub_array[] = $fila["nombre"];
-        $sub_array[] = $fila["modelo"];
-        $sub_array[] = $fila["marca"];
-        $sub_array[] = $fila["descripcion"];
-        $sub_array[] = $fila["poliza"];
-        $sub_array[] = $fila["proveedor"];
-        $sub_array[] = $fila["categoria"];
-        if(($fila["estado"]!=0)){
-        $sub_array[] =
-                         '<div class="container px-4 text-center">
-                                 <div class="col-4">
-                                     <span class="badge bg-success" id="' . $fila["estado"] . '">Activo</span>
-                                    
-                                 </div>
-                             </div>
-                         </div>';   
-        }  
+        $sub_array[] = $fila["nodo"]; 
+        $sub_array[] = $fila["parcheo"]; 
+        $sub_array[] = $fila["puerto"]; 
+        $sub_array[] = $fila["segmento"]; 
+        $sub_array[] = $fila["num_segmento"]; 
+        $sub_array[] = $fila["vlan"]; 
+        $sub_array[] = '
+                            <div class="container px-1 text-center">
+                                <div class="row g-4">
+                                     <div class="col-6">
+                                     <!-- Button trigger modal -->
+                                     <button type="submit" class="btn btn-outline-warning btnVer" id="'.$fila["id"].'" >
+                                         Ver
+                                     </button>
+                                      </div>
+                                </div>
+                            </div/>
+                            
+                            '; 
         $sub_array[] = '
                             <div class="container px-1 text-center">
                                 <div class="row g-4">

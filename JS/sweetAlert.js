@@ -1,4 +1,5 @@
 function registro(){
+  
     Swal.fire({
         position: 'top-center',
         icon: 'success',
