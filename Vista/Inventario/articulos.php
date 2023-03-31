@@ -1,25 +1,4 @@
-<?php
 
-
-
-
-if(isset($_POST['valor'])){
-    $opcion=$_POST['valor'];
-    $id=$_POST['id_art'];
- $conect = mysqli_connect("localhost","root","","sistema_urse");
- $conect->set_charset("utf8");
- $sql= "SELECT * from vista_articulos where id=".$id;
-  $getUser=mysqli_query($conect,$sql);
-if($getUser->num_rows >0){
-       while ($fila= $getUser->fetch_object()) {
-              $user=$fila;
-       break;
-       }
-
-       //@session_start();  
-  }
-}
-?>
 
 
 
@@ -185,9 +164,24 @@ if($getUser->num_rows >0){
                                             </div>
 -->
                                             <div class="col-6 mb-3">
-                                                <label for="setting-input-1" class="form-label">N. Poliza<span class="ms-2" data-container="body" data-bs-toggle="popover" data-trigger="hover" data-placement="top" data-content="This is a Bootstrap popover example. You can use popover to provide extra info.">
-                                                </span></label>
-                                                <input type="text" class="form-control" id="num_poliza"   required>
+                                            <label for="setting-input-2" class="form-label">Póliza</label>
+                                                <select class="form-select" id="num_poliza" aria-label="Default select example">
+                                                    <option selected>Seleccionar póliza</option>
+                                                    <?php
+                                                     $conect = mysqli_connect("localhost","root","","sistema_urse");
+                                                     $conect->set_charset("utf8");
+                                                     $qry_categorias="SELECT * FROM polizas WHERE estado_pol=1 ";
+		                                             if ($resultado = mysqli_query($conect, $qry_categorias)) {
+		                                             /* obtener array asociativo */
+		                                             while ($row = mysqli_fetch_assoc($resultado)) {
+		                                                 echo '<option value="'.$row["id_pol"].'">'.$row["num_pol"].'</option>';
+		                                             }
+		                                             /* liberar el conjunto de resultados */
+		                                             mysqli_free_result($resultado);
+		                                             }
+                                                    echo "<br>";
+    	                                         ?>
+                                                </select>   
                                             </div>
                                             
                                         </div>
@@ -296,21 +290,25 @@ if($getUser->num_rows >0){
                                             </div>
                                         </div>
                                         <div class="row justify-content-between">
-                                            <!--
                                             <div class="col-6 mb-3">
-                                                <label for="setting-input-2" class="form-label">Fecha de póliza</label>
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Seleccionar proveedor</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                                <label for="setting-input-2" class="form-label">Póliza</label>
+                                                <select class="form-select" id="num_poliza1" aria-label="Default select example">
+                                                    <option selected>Seleccionar póliza</option>
+                                                    <?php
+                                                     $conect = mysqli_connect("localhost","root","","sistema_urse");
+                                                     $conect->set_charset("utf8");
+                                                     $qry_categorias="SELECT * FROM polizas WHERE estado_pol=1 ";
+		                                             if ($resultado = mysqli_query($conect, $qry_categorias)) {
+		                                             /* obtener array asociativo */
+		                                             while ($row = mysqli_fetch_assoc($resultado)) {
+		                                                 echo '<option value="'.$row["id_pol"].'">'.$row["num_pol"].'</option>';
+		                                             }
+		                                             /* liberar el conjunto de resultados */
+		                                             mysqli_free_result($resultado);
+		                                             }
+                                                    echo "<br>";
+    	                                         ?>
                                                 </select>    
-                                            </div>
--->
-                                            <div class="col-6 mb-3">
-                                                <label for="setting-input-1" class="form-label">N. Poliza<span class="ms-2" data-container="body" data-bs-toggle="popover" data-trigger="hover" data-placement="top" data-content="This is a Bootstrap popover example. You can use popover to provide extra info.">
-                                                </span></label>
-                                                <input type="text" class="form-control" id="num_poliza1"  required>
                                             </div>
                                             
                                         </div>
