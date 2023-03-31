@@ -108,7 +108,8 @@ $(document).ready(function() {
   
   //EVENTO PARA ENVIAR LOS DATOS DE UN ARTICULO AL FORMULARIO PARA SU ACTUALIZACIÓN      
   $(document).on("click", ".btnEditar", function(){	
-    var art_id  = $(this).attr("id");	           //Obtención del ID del artículo desde botón editar       
+    var art_id  = $(this).attr("id");	           //Obtención del ID del artículo desde botón editar  
+         
     opcion      = 2;                               // Opción editar
     fila        = $(this).closest("tr");	                  
     folio       = fila.find('td:eq(0)').text();    //obtención de datos de una fila
