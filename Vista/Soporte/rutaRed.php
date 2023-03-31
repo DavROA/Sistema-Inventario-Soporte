@@ -53,7 +53,7 @@
                                 segmentos();
                                 ?>
                             </div>
-                            <a class="app-card-link-mask" onclick="loadFileSoporteRedes('consultarSegmentos','loadPage')"></a>
+                            <a class="app-card-link-mask" href="consultarSegmentos.php"></a>
                         </div>
                     </div>
                     <div class="col-6 col-lg-3">
